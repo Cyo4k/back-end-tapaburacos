@@ -20,8 +20,7 @@
         "jsonwebtoken": "^9.0.2",
         "mongoose": "^8.8.0",
         "multer": "^1.4.5-lts.1",
-        "tapaburacos": "file:",
-        "vercel": "^39.1.0"
+        "tapaburacos": "file:"
     },
     "description": ""
 }
