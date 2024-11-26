@@ -9,24 +9,21 @@ const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const reportRoutes = require("./routes/reportRoutes");
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose
-    .connect(conect, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
+    .connect(conect)
     .then(() => console.log("banco de dados conectado com sucesso!"))
     .catch((err) => console.log(err));
 
 app.use("/auth", authRoutes);
 app.use("/reports", reportRoutes);
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log("Server running on port 5000");
 });
 
